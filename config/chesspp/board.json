@@ -40,7 +40,8 @@
                 ["North", "North", "North", "North", "North", "North", "North", "North"],
                 [null   , null   , null   , null   , null   , null   , null   , null   ]
             ],
-            "first turn": "White"
+            "first turn": "White",
+			"analyzer": "Traditional"
         }
     }
 }
