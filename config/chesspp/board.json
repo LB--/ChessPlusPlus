@@ -41,7 +41,7 @@
                 [null   , null   , null   , null   , null   , null   , null   , null   ]
             ],
             "first turn": "White",
-			"analyzer": "Traditional"
+            "analyzer": "Traditional"
         }
     }
 }
