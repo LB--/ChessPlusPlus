@@ -35,6 +35,10 @@
                 "King":   "res/img/pieces/white/king.png",
                 "":       "res/img/missing.png"
             },
+            "Dead":
+            {
+                "Ghost": "res/img/missing.png"
+            },
             "": "res/img/missing.png"
         }
     }
