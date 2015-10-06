@@ -1,4 +1,4 @@
-#ifndef chesspp_common__Debug_HeaderPlusPlus
+#ifndef chesspp_common_Debug_HeaderPlusPlus
 #define chesspp_common_Debug_HeaderPlusPlus
 
 namespace chesspp { namespace common

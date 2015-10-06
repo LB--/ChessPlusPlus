@@ -13,30 +13,30 @@ namespace chesspp { namespace common
             {
                 switch(d)
                 {
-                case D::North:     d = D::NorthEast; break;
-                case D::NorthEast: d = D::East;      break;
-                case D::East:      d = D::SouthEast; break;
-                case D::SouthEast: d = D::South;     break;
-                case D::South:     d = D::SouthWest; break;
-                case D::SouthWest: d = D::West;      break;
-                case D::West:      d = D::NorthWest; break;
-                case D::NorthWest: d = D::North;     break;
-                default:                             break;
+                    case D::North:     d = D::NorthEast; break;
+                    case D::NorthEast: d = D::East;      break;
+                    case D::East:      d = D::SouthEast; break;
+                    case D::SouthEast: d = D::South;     break;
+                    case D::South:     d = D::SouthWest; break;
+                    case D::SouthWest: d = D::West;      break;
+                    case D::West:      d = D::NorthWest; break;
+                    case D::NorthWest: d = D::North;     break;
+                    default:                             break;
                 }
             }
             for(signed i = 0; i > r; --i) //rotate negatively
             {
                 switch(d)
                 {
-                case D::North:     d = D::NorthWest; break;
-                case D::NorthEast: d = D::North;     break;
-                case D::East:      d = D::NorthEast; break;
-                case D::SouthEast: d = D::East;      break;
-                case D::South:     d = D::SouthEast; break;
-                case D::SouthWest: d = D::South;     break;
-                case D::West:      d = D::SouthWest; break;
-                case D::NorthWest: d = D::West;      break;
-                default:                             break;
+                    case D::North:     d = D::NorthWest; break;
+                    case D::NorthEast: d = D::North;     break;
+                    case D::East:      d = D::NorthEast; break;
+                    case D::SouthEast: d = D::East;      break;
+                    case D::South:     d = D::SouthEast; break;
+                    case D::SouthWest: d = D::South;     break;
+                    case D::West:      d = D::SouthWest; break;
+                    case D::NorthWest: d = D::West;      break;
+                    default:                             break;
                 }
             }
             return d;
@@ -46,16 +46,17 @@ namespace chesspp { namespace common
             using D = Direction;
             switch(d)
             {
-            case D::North:     return os << "North";
-            case D::NorthEast: return os << "NorthEast";
-            case D::East:      return os << "East";
-            case D::SouthEast: return os << "SouthEast";
-            case D::South:     return os << "South";
-            case D::SouthWest: return os << "SouthWest";
-            case D::West:      return os << "West";
-            case D::NorthWest: return os << "NorthWest";
-            case D::None:      return os << "None";
+                case D::North:     return os << "North";
+                case D::NorthEast: return os << "NorthEast";
+                case D::East:      return os << "East";
+                case D::SouthEast: return os << "SouthEast";
+                case D::South:     return os << "South";
+                case D::SouthWest: return os << "SouthWest";
+                case D::West:      return os << "West";
+                case D::NorthWest: return os << "NorthWest";
+                case D::None:      return os << "None";
             }
+            return os;
         }
         std::istream &operator>>(std::istream &is, Direction &d)
         {

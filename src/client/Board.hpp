@@ -58,10 +58,9 @@ namespace chesspp { namespace client
     inline double sizeX(Board const &b) noexcept { return b.cellSizeX() * b.cellCountX(); }
     inline double sizeY(Board const &b) noexcept { return b.cellSizeY() * b.cellCountY(); }
 
-    inline bool valid(Board const &b, Board::Position_t const &p) noexcept
+    inline bool valid(Board const &b, Board::Position_t const &pos) noexcept
     {
-        return p.x >= 0 && p.x < b.cellCountX()
-            && p.y >= 0 && p.y < b.cellCountY();
+        return pos.isWithin(Board::Position_t::Origin(), {b.cellCountX(), b.cellCountY()});
     }
 }}
 

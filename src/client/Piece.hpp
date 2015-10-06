@@ -32,10 +32,12 @@ namespace chesspp { namespace client
         Piece const &operator=(Piece const &from) noexcept
         {
             uid = from.uid;
+            return *this;
         }
         Piece const &operator=(Piece &&from) noexcept
         {
             uid = from.uid;
+            return *this;
         }
 
         Id_t id() const noexcept
