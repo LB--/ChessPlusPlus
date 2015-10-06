@@ -5,9 +5,12 @@ add_library(ChessPlusPlus-common
 set_property(TARGET ChessPlusPlus-common PROPERTY CXX_STANDARD 14)
 target_include_directories(ChessPlusPlus-common PUBLIC
 	"../"
+	${Boost_INCLUDE_DIRS}
 )
 target_link_libraries(ChessPlusPlus-common
-	PUBLIC json-parser
+	PUBLIC
+		json-parser
+		${Boost_LIBRARIES}
 )
 
 # Options

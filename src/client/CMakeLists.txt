@@ -64,7 +64,7 @@ target_link_libraries(ChessPlusPlus-client
 	${Boost_LIBRARIES}
 )
 if(SFML_STATIC_LIBRARIES)
-	target_link_libraries(ChessPlusPlus
+	target_link_libraries(ChessPlusPlus-client
 		z
 		bz2
 	)
