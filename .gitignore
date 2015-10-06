@@ -33,3 +33,4 @@ obj/
 deps.debug/
 objs.debug/
 CMakeFiles/
+Thumbs.db

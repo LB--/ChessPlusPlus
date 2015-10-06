@@ -1,0 +1,8 @@
+{
+	"menu":
+	{
+		"title":      "data/img/title.png",
+		"background": "data/img/chessboard_640x640.png",
+		"font":       "data/font/OpenSans/OpenSans-Semibold.ttf"
+	}
+}

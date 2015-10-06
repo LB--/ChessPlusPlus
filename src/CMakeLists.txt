@@ -1,13 +1,27 @@
-# Add sources
-target_sources(ChessPlusPlus PUBLIC
-	"${CMAKE_CURRENT_LIST_DIR}/Debug.cpp"
-)
+
+# Find Boost
+find_package(Boost REQUIRED COMPONENTS filesystem system)
+
+# Find SFML
+set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/deps/SFML/cmake/Modules" ${CMAKE_MODULE_PATH})
+if(WIN32)
+	find_package(SFML 2 REQUIRED COMPONENTS graphics window system audio main)
+else()
+	find_package(SFML 2 REQUIRED COMPONENTS graphics window system audio)
+endif()
+
+# Building with Clang on OSX requires -stdlib=libc++ flag
+if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+	if(APPLE)
+		set(CMAKE_CXX_FLAGS "-stdlib=libc++ ${CMAKE_CXX_FLAGS}")
+		set(CMAKE_XCODE_ATTRIBUTE_CLANG_CXX_LIBRARY "libc++")
+	endif()
+endif()
+
+# Options
+include(CMakeDependentOption)
 
 # Divvy out work to subdirectories
-add_subdirectory("app/")
-add_subdirectory("board/")
-add_subdirectory("config/")
-add_subdirectory("gfx/")
-add_subdirectory("piece/")
-add_subdirectory("res/")
-add_subdirectory("util/")
+add_subdirectory("client/")
+add_subdirectory("common/")
+add_subdirectory("server/")

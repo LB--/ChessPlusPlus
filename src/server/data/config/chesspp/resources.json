@@ -1,0 +1,31 @@
+{
+	"board":
+	{
+		"board":         "data/img/chessboard_640x640.png",
+		"valid move":    "data/img/valid_move.png",
+		"enemy move":    "data/img/enemy_move.png",
+		"valid capture": "data/img/valid_capture.png",
+		"enemy capture": "data/img/enemy_capture.png",
+		"pieces":
+		{
+			"Black":
+			{
+				"Pawn":   "data/img/pieces/black/pawn.png",
+				"Rook":   "data/img/pieces/black/rook.png",
+				"Knight": "data/img/pieces/black/knight.png",
+				"Bishop": "data/img/pieces/black/bishop.png",
+				"Queen":  "data/img/pieces/black/queen.png",
+				"King":   "data/img/pieces/black/king.png"
+			},
+			"White":
+			{
+				"Pawn":   "data/img/pieces/white/pawn.png",
+				"Rook":   "data/img/pieces/white/rook.png",
+				"Knight": "data/img/pieces/white/knight.png",
+				"Bishop": "data/img/pieces/white/bishop.png",
+				"Queen":  "data/img/pieces/white/queen.png",
+				"King":   "data/img/pieces/white/king.png"
+			}
+		}
+	}
+}
