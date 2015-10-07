@@ -12,6 +12,12 @@ target_link_libraries(ChessPlusPlus-common
 		json-parser
 		${Boost_LIBRARIES}
 )
+if(MINGW)
+	target_link_libraries(ChessPlusPlus-common
+		PUBLIC
+			ws2_32
+	)
+endif()
 
 # Options
 option(CHESSPP_COMMON_TRUNC_LOGS "Truncate the log files at the start of the program" ON)

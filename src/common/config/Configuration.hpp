@@ -53,6 +53,14 @@ namespace chesspp { namespace common
             Configuration(std::string const &configFile) noexcept(false);
             virtual ~Configuration() = default;
 
+            /**
+             * \brief
+             * Converts relative paths to correct absolute paths and leaves absolute paths
+             * alone.
+             * 
+             * \param p The path to correct.
+             * \return The corrected path.
+             */
             std::string resource_path(std::string const &p);
 
             /**

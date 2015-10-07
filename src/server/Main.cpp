@@ -1,4 +1,5 @@
 #include "common/Debug.hpp"
+#include "net/Server.hpp"
 
 /**
  * \brief
@@ -13,5 +14,8 @@ int main(int nargs, char const *const *args)
     chesspp::common::enableRedirection();
 #endif
 
-    //TODO
+    boost::asio::io_service ios;
+    chesspp::server::net::Server server {ios, 20702};
+
+    server.start();
 }
