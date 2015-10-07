@@ -11,13 +11,13 @@ namespace chesspp { namespace client
     {
         using Font_res = res::SfmlFileResource<sf::Font>;
         using Texture_res = res::SfmlFileResource<sf::Texture>;
-        StartMenuState::StartMenuState(Application &app_, sf::RenderWindow &display_)
+        StartMenuState::StartMenuState(Application &app_, sf::RenderTarget &display_)
         : AppState(display_) //can't use {}
         , app(app_)          //can't use {}
         , menu_background{app.resourcesConfig().resources().from_config<Texture_res>("menu", "background")}
         , logo           {app.resourcesConfig().resources().from_config<Texture_res>("menu", "title")     }
         , font           (app.resourcesConfig().resources().from_config<Font_res>   ("menu", "font")      ) //can't use {}
-        , start_text{"Start", 75}
+        , start_text{"Connect", 75}
         , quit_text {"Quit", 75}
         {
             //Sets position at centered horizontally, down 10% vertically
@@ -39,7 +39,15 @@ namespace chesspp { namespace client
         void StartMenuState::onRender()
         {
             display.clear();
-            display.draw(menu_background);
+            //Fill whole background with chess board pattern
+            for(decltype(display.getSize().x) x = 0; x < display.getSize().x; x += menu_background.getLocalBounds().width)
+            {
+                for(decltype(display.getSize().y) y = 0; y < display.getSize().y; y += menu_background.getLocalBounds().height)
+                {
+                    menu_background.setPosition(x, y);
+                    display.draw(menu_background);
+                }
+            }
             display.draw(logo);
             display.draw(start_text);
             display.draw(quit_text);

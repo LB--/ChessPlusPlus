@@ -24,7 +24,7 @@ namespace chesspp { namespace client
              * 
              * \param disp The sf::RenderWindow which must outlive this object.
              */
-            AppState(sf::RenderWindow &disp)
+            AppState(sf::RenderTarget &disp)
             : display(disp) //cannot use {}
             {
             }
@@ -42,7 +42,7 @@ namespace chesspp { namespace client
              * \brief
              * The sf::RenderWindow bound at construction.
              */
-            sf::RenderWindow &display;
+            sf::RenderTarget &display;
         };
     }
 }}

@@ -39,7 +39,7 @@ namespace chesspp { namespace client
              * \param display The sf::RenderWindow use during onRender(), must outlive this
              * instance.
              */
-            ChessPlusPlusState(Application &app, sf::RenderWindow &display);
+            ChessPlusPlusState(Application &app, sf::RenderTarget &display);
 
             /**
              * \brief

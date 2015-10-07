@@ -10,7 +10,7 @@ namespace chesspp { namespace client
 {
     namespace app
     {
-        ChessPlusPlusState::ChessPlusPlusState(Application &app_, sf::RenderWindow &disp)
+        ChessPlusPlusState::ChessPlusPlusState(Application &app_, sf::RenderTarget &disp)
         : AppState(disp)                    //can't use {}
         , app(app_)                         //can't use {}
         , res_config(app.resourcesConfig()) //can't use {}

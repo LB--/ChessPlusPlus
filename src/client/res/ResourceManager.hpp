@@ -86,7 +86,7 @@ namespace chesspp { namespace client
                 Res_t::key_type key {common::util::path_concat(std::string("\0", 1), path...), typeid(ResT)};
                 if(res.find(key) == std::end(res))
                 {
-                    res.emplace(key, Res_t::mapped_type{new ResT{conf.setting(path...)}});
+                    res.emplace(key, Res_t::mapped_type{new ResT{conf.resource_path(conf.setting(path...))}});
                 }
                 //This cast is guaranteed to be correct
                 return static_cast<ResT &>(*res[key]);

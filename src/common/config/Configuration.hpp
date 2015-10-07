@@ -53,6 +53,8 @@ namespace chesspp { namespace common
             Configuration(std::string const &configFile) noexcept(false);
             virtual ~Configuration() = default;
 
+            std::string resource_path(std::string const &p);
+
             /**
              * \brief
              * Access values in the configuration.

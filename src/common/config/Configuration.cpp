@@ -83,5 +83,13 @@ namespace chesspp { namespace common
         : reader{std::ifstream(validateConfigFile(configFile))}
         {
         }
+        std::string Configuration::resource_path(std::string const &p)
+        {
+            if(boost::filesystem::path(p).is_relative())
+            {
+                return res_path + p;
+            }
+            return p;
+        }
     }
 }}

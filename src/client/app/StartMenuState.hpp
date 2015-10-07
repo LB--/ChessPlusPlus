@@ -40,7 +40,7 @@ namespace chesspp { namespace client
              * \param display The sf::RenderWindow use during onRender(), must outlive this
              * instance.
              */
-            StartMenuState(Application &app, sf::RenderWindow &display);
+            StartMenuState(Application &app, sf::RenderTarget &display);
 
             /**
              * \brief
