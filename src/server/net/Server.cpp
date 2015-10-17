@@ -4,7 +4,7 @@ namespace chesspp { namespace server
 {
     namespace net
     {
-        struct Server::Impl
+        struct Server::Impl final
         {
             boost::asio::io_service &ios;
             boost::asio::ip::tcp::acceptor acceptor;
