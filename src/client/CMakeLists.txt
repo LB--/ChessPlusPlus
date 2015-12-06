@@ -58,8 +58,8 @@ target_include_directories(ChessPlusPlus-client PUBLIC
 	${Boost_INCLUDE_DIRS}
 )
 target_link_libraries(ChessPlusPlus-client
-	ChessPlusPlus-common
 	${SFML_LIBRARIES}
+	ChessPlusPlus-common
 	${SFML_DEPENDENCIES}
 	${Boost_LIBRARIES}
 )
