@@ -83,7 +83,7 @@ install:
   - if [ "$REBUILD_BOOST" == "yes" ]; then cd boost && chmod +x bootstrap.sh; fi
   - if [ "$REBUILD_BOOST" == "yes" ]; then ./bootstrap.sh --prefix="$(pwd)/../boost-install"; fi
   - if [ "$REBUILD_BOOST" == "yes" ]; then ./b2 headers; fi
-  - if [ "$REBUILD_BOOST" == "yes" ]; then ./b2 toolset=gcc-5 cxxflags="-std=c++14" variant=release link=static --with-filesystem --with-system install -d0; fi
+  - if [ "$REBUILD_BOOST" == "yes" ]; then ./b2 toolset=gcc-5 cxxflags="-std=c++14" variant=release link=static --with-filesystem --with-system --with-thread install -d0; fi
   - if [ "$REBUILD_BOOST" == "no"  ]; then mkdir boost && cd boost; fi
   - cd ../boost-install && export BOOST_ROOT="$(pwd)"
   - popd
