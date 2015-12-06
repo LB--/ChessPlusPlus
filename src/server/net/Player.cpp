@@ -33,7 +33,7 @@ namespace chesspp { namespace server
 		Player::Player(sf::TcpListener &listener)
 		: impl{std::make_unique<Impl>(listener)}
 		{
-			impl->thread.emplace(Impl::handle, &*impl);
+			impl->thread.emplace(&Impl::handle, &*impl);
 		}
 		Player::Player(Player &&from) noexcept
 		: impl{std::make_unique<Impl>()}
