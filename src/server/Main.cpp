@@ -14,8 +14,7 @@ int main(int nargs, char const *const *args)
     chesspp::common::enableRedirection();
 #endif
 
-    boost::asio::io_service ios;
-    chesspp::server::net::Server server {ios, 20702};
+    chesspp::server::net::Server server {20702};
 
     server.start();
 }

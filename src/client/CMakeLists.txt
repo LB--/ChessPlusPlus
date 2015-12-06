@@ -63,12 +63,6 @@ target_link_libraries(ChessPlusPlus-client
 	${SFML_DEPENDENCIES}
 	${Boost_LIBRARIES}
 )
-if(SFML_STATIC_LIBRARIES)
-	target_link_libraries(ChessPlusPlus-client
-		z
-		bz2
-	)
-endif()
 
 # Options
 if(WIN32)

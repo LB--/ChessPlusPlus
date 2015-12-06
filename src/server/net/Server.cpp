@@ -1,33 +1,50 @@
 #include "Server.hpp"
 
+#include "Player.hpp"
+
+#include <stdexcept>
+#include <vector>
+
+#include <boost/thread.hpp>
+
+#include <SFML/Network.hpp>
+
 namespace chesspp { namespace server
 {
     namespace net
     {
         struct Server::Impl final
         {
-            boost::asio::io_service &ios;
-            boost::asio::ip::tcp::acceptor acceptor;
+			std::uint16_t port;
+            sf::TcpListener listener;
+			std::vector<Player> players;
 
-            Impl(boost::asio::io_service &ios, std::uint16_t port)
-            : ios(ios)
-            , acceptor{ios, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v6(), port)}
+            Impl(std::uint16_t port)
+            : port{port}
             {
             }
         };
-        Server::Server(boost::asio::io_service &ios, std::uint16_t port)
-        : impl{std::make_unique<Impl>(std::ref(ios), port)}
+        Server::Server(std::uint16_t port)
+        : impl{std::make_unique<Impl>(port)}
         {
         }
         Server::~Server() = default;
 
         void Server::start()
         {
-            //
+            auto status = impl->listener.listen(impl->port);
+			if(status != sf::Socket::Done)
+			{
+				throw std::runtime_error{"Error starting server on port"}; //TODO
+			}
+			while(true) //TODO
+			{
+				impl->players.emplace_back(std::ref(impl->listener));
+			}
         }
         void Server::stop()
         {
-            //
+            impl->listener.close();
         }
     }
 }}
