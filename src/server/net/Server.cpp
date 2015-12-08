@@ -15,9 +15,9 @@ namespace chesspp { namespace server
     {
         struct Server::Impl final
         {
-			std::uint16_t port;
+            std::uint16_t port;
             sf::TcpListener listener;
-			std::vector<Player> players;
+            std::vector<Player> players;
 
             Impl(std::uint16_t port)
             : port{port}
@@ -33,14 +33,14 @@ namespace chesspp { namespace server
         void Server::start()
         {
             auto status = impl->listener.listen(impl->port);
-			if(status != sf::Socket::Done)
-			{
-				throw std::runtime_error{"Error starting server on port"}; //TODO
-			}
-			while(true) //TODO
-			{
-				impl->players.emplace_back(std::ref(impl->listener));
-			}
+            if(status != sf::Socket::Done)
+            {
+                throw std::runtime_error{"Error starting server on port"}; //TODO
+            }
+            while(true) //TODO
+            {
+                impl->players.emplace_back(std::ref(impl->listener));
+            }
         }
         void Server::stop()
         {
